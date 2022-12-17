@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+// import firebase from './src/services/firebaseConnection';
 
-export default function App() {
+import AuthProvaider from "./src/contexts/auth";
+
+import { NavigationContainer } from "@react-navigation/native";
+
+import Routes from "./src/routes";
+
+import { useColorScheme } from "react-native";
+import { ThemeProvider } from "styled-components";
+import themes from "./src/theme";
+
+const App = () => {
+  const deviceTheme = useColorScheme();
+  const theme = themes[deviceTheme] || theme.dark;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <ThemeProvider theme={theme}>
+        <StatusBar backgroundColor="transparent" style="auto" />
+        <AuthProvaider>
+          <NavigationContainer>
+            <Routes />
+          </NavigationContainer>
+        </AuthProvaider>
+      </ThemeProvider>
+    </>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
