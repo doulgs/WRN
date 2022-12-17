@@ -18,6 +18,10 @@ export const Input = styled.TextInput.attrs({
   border-radius: 7px;
   border-width: 0.5px;
 `;
+export const ContentInput = styled.View`
+  width: 90%;
+  margin-top: 30px;
+`;
 
 export const SubmitButton = styled.TouchableOpacity`
   align-items: center;

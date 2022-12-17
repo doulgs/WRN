@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { SafeAreaView, Keyboard, TouchableWithoutFeedback } from "react-native";
 import Select from "../../components/Select";
+import { SelectList } from "react-native-dropdown-select-list";
 import {
   Background,
   Container,
+  ContentInput,
   Input,
   SubmitButton,
   SubmitText,
@@ -13,16 +15,17 @@ import {
 export default function New() {
   const [label, setLabel] = useState("");
   const [valor, setValor] = useState("");
+  const [selected, setSelected] = useState("");
   const [tipo, setTipo] = useState(null);
 
   const selectedOption = [
     {
-      id: "1",
-      description: "Receita",
+      key: "1",
+      value: "Receita",
     },
     {
-      id: "2",
-      description: "Despesa",
+      key: "2",
+      value: "Despesa",
     },
   ];
 
@@ -48,11 +51,23 @@ export default function New() {
             onChangeText={(text) => setValor(text)}
           />
 
-          <Select
-            options={selectedOption}
-            onChangeSelectedTipo={(description) => setTipo(description)}
-            text="Tipo de Movimentação"
-          />
+          <ContentInput>
+            <SelectList
+              data={selectedOption}
+              setSelected={(val) => setSelected(val)}
+              save="value"
+              placeholder="Tipo da movimentação"
+              inputStyles={{ fontSize: 16 }}
+              boxStyles={{
+                backgroundColor: "rgba(255, 255, 255,0.5)",
+                paddingLeft: 12,
+              }}
+              dropdownStyles={{
+                backgroundColor: "rgba(255, 255, 255,0.5)",
+              }}
+              dropdownItemStyles={{ borderBottomWidth: 0.5 }}
+            />
+          </ContentInput>
 
           <SubmitButton>
             <SubmitText>Registrar</SubmitText>
