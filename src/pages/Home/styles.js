@@ -14,4 +14,8 @@ export const Title = styled.Text`
 
 export const Lista = styled.FlatList`
   margin: 0px 14px;
+  padding: 0px 14px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: ${(props) => props.theme.bgList};
 `;

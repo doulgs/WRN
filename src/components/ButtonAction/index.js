@@ -8,9 +8,10 @@ import {
   Safe,
   OptionModal,
   TitleModal,
+  IconTitle,
 } from "./styles";
 
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 const ButtonAction = () => {
@@ -20,23 +21,18 @@ const ButtonAction = () => {
   const options = [
     {
       title: "Adicionar Movivimentação",
-      icon: "cog",
+      icon: "calculator",
       action: () => navigation.navigate("New"),
     },
     {
-      title: "Adicionar Condições",
-      icon: "cog",
+      title: "Editar Info. do cartão",
+      icon: "credit-card",
       action: () => alert("Story"),
     },
     {
-      title: "Saidas",
-      icon: "cog",
+      title: "Ajuda",
+      icon: "help",
       action: () => alert("Story"),
-    },
-    {
-      title: "Criptomoedas",
-      icon: "cog",
-      action: () => console.log("Ao Vivo"),
     },
   ];
 
@@ -44,7 +40,12 @@ const ButtonAction = () => {
     <>
       <Position onPress={() => setIsVisible(!isVisible)}>
         <Icon>
-          <Ionicons name="keypad" size={24} color="black" />
+          <MaterialCommunityIcons
+            name="credit-card-edit-outline"
+            size={24}
+            color="#4a89a5"
+          />
+          <IconTitle>Opções</IconTitle>
         </Icon>
       </Position>
 
@@ -52,9 +53,15 @@ const ButtonAction = () => {
         <Safe onPress={() => setIsVisible(false)}>
           <Container>
             {options.map((op, i) => (
-              <OptionModal key={i} onPress={op.action}>
+              <OptionModal
+                key={i}
+                onPress={op.action}
+                style={{
+                  borderBottomWidth: i === options.length - 1 ? 0 : 0.5,
+                }}
+              >
                 <TitleModal>{op.title}</TitleModal>
-                <Ionicons name={op.icon} size={22} color="#000" />
+                <Entypo name={op.icon} size={22} color="#4a89a5" />
               </OptionModal>
             ))}
           </Container>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SafeAreaView, Keyboard, TouchableWithoutFeedback } from "react-native";
-import Select from "../../components/Select";
 import { SelectList } from "react-native-dropdown-select-list";
+
 import {
   Background,
   Container,

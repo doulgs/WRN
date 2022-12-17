@@ -2,17 +2,26 @@ import styled from "styled-components/native";
 
 export const Position = styled.TouchableOpacity`
   position: absolute;
-  top: 90%;
-  //left: 44.5%;
-  left: 85%;
+  top: 145px;
+  right: 37px;
 
-  background: #333;
-  padding: 10px;
+  background: ${(props) => props.theme.colors.white};
+  padding: 7px;
   border-radius: 8px;
   z-index: 999;
+  elevation: 2;
 `;
 
-export const Icon = styled.View``;
+export const Icon = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const IconTitle = styled.Text`
+  padding-left: 5px;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.primary};
+`;
 
 export const ModalPop = styled.Modal``;
 
@@ -22,13 +31,14 @@ export const Safe = styled.TouchableOpacity`
 
 export const Container = styled.View`
   border-radius: 8px;
-  border-color: #333;
+  border-color: ${(props) => props.theme.colors.primary};
   border-width: 1px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.white};
   padding: 0px 10px;
   position: absolute;
-  bottom: 80px;
-  right: 60px;
+  top: 155px;
+  right: 37px;
+  elevation: 2;
 `;
 
 export const OptionModal = styled.TouchableOpacity`
@@ -36,8 +46,8 @@ export const OptionModal = styled.TouchableOpacity`
   align-items: center;
   justify-content: space-between;
   padding: 7px 0px;
-  border-bottom-color: #333;
-  border-bottom-width: ${(props) => (props.key === -1 ? "0px" : "0.5px")};
+  margin: 2px 0px;
+  border-bottom-color: ${(props) => props.theme.colors.offBlack}; ;
 `;
 
 export const TitleModal = styled.Text`

@@ -16,7 +16,7 @@ const Actions = () => {
   const opActions = [
     {
       title: "entradas",
-      icon: "addfolder",
+      icon: "creditcard",
       action: () => navigation.navigate("New"),
     },
     {
@@ -25,14 +25,14 @@ const Actions = () => {
       action: () => alert("Story"),
     },
     {
-      title: "Criptos",
-      icon: "bank",
-      action: () => alert("Story"),
-    },
-    {
       title: "Data",
       icon: "calendar",
       action: () => console.log("Ao Vivo"),
+    },
+    {
+      title: "Criptos",
+      icon: "bank",
+      action: () => alert("Story"),
     },
     {
       title: "config",
@@ -47,9 +47,9 @@ const Actions = () => {
         {opActions.map((ac, i) => (
           <Content key={i}>
             <AreaButton onPress={ac.action}>
-              <AntDesign name={ac.icon} size={25} color="black" />
+              <AntDesign name={ac.icon} size={25} color="#4a89a5" />
+              <LabelButton>{ac.title.toUpperCase()} </LabelButton>
             </AreaButton>
-            <LabelButton>{ac.title.toUpperCase()} </LabelButton>
           </Content>
         ))}
       </ActionButton>

@@ -8,7 +8,12 @@ import {
   ContentExpense,
   Date,
   Skeleton,
+  ContentData,
+  IconContent,
+  CContainer,
 } from "./styles";
+
+import { Ionicons } from "@expo/vector-icons";
 
 import { AuthContext } from "../../contexts/auth";
 
@@ -17,10 +22,17 @@ const Moviments = ({ data }) => {
 
   return (
     <Container>
-      <Date>{data.date}</Date>
+      <ContentData>
+        <Date>{data.date}</Date>
+      </ContentData>
 
       <Content>
-        <ContentLabel>{data.label}</ContentLabel>
+        <CContainer>
+          <IconContent>
+            <Ionicons name="md-cart-outline" size={24} color="white" />
+          </IconContent>
+          <ContentLabel>{data.label}</ContentLabel>
+        </CContainer>
 
         {showValue ? (
           <>

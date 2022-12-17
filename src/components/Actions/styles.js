@@ -2,11 +2,11 @@ import styled from "styled-components/native";
 
 export const Container = styled.ScrollView`
   max-height: 84px;
-  margin: 18px 14px 14px 14px;
+  margin: 0px 0px 0px 14px;
 `;
 export const Content = styled.View`
   align-items: center;
-  margin-right: 32px;
+  margin-right: 15px;
 `;
 export const ActionButton = styled.View`
   align-items: center;
@@ -14,16 +14,15 @@ export const ActionButton = styled.View`
   flex-direction: row;
 `;
 export const AreaButton = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.FontOutOfFocus};
+  background-color: ${(props) => props.theme.colors.white};
   justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
+  width: 100px;
+  max-width: 100px;
+  border-radius: 7px;
+  padding: 10px;
 `;
 export const LabelButton = styled.Text`
   font-size: 14px;
-  margin-top: 4px;
-  text-align: center;
-  color: ${(props) => props.theme.colorFont};
+  margin-top: 10px;
+  color: ${(props) => props.theme.colors.black};
 `;

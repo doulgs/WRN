@@ -5,9 +5,11 @@ export default {
   bgSubBalance: "#92939b",
   colorFont: "#000",
   FontOutOfFocus: "rgba(255, 255, 255,0.5)",
+  bgList: "#92939b",
+  bgSkeleton: "#282a36",
 
   colors: {
-    primary: "#4efa7b",
+    primary: "#4a89a5",
     white: "#FFF",
     black: "#000",
   },
